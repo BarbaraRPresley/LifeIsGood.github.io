@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Layout</title>
+        <link rel="stylesheet" href="testFlexStyle.css" />
+    </head>
+    <body>
+        <div class="theGrid">
+            <div class="topPart">
+                <div class="gameTitle">
+                    <h1>GUESS MY NUMBER!</h1>
+                </div>
+                <div class="gameDescription">
+                    <h2>(Between 1 and 20)</h2>
+                </div>
+            </div>
+            <div class="secretPart">
+                <div class="secretBox">
+                    <div class="secretText">?</div>
+                </div>
+            </div>
+            <div class="bottomPart">
+                <div class="inputPart">
+                    <div class="inputLabel">
+                        Enter a number:
+                    </div>  
+                    <input type="number" class="inputNumber"></input>
+                    <button class="checkBtn">Check Results</button>
+                    <button class="againBtn">Play Again?</button>
+                </div>
+                <div class="messagePart">
+                    <div class="label">Message:</div>
+                    <div class="messageBox">
+                        <p class="theMessage">Enter a number</p>
+                    </div>
+                    <div class="label">Score:</div>
+                    <div class="scoreBox">
+                        <p class="score">Score: 20</p>
+                    </div>
+                    <div class="label">Highest Score:</div>
+                    <div class="highestScoreBox">
+                        <p class="highestScore">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="testScript.js"></script>
+</html>

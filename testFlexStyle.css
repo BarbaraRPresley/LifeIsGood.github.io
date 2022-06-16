@@ -1,0 +1,194 @@
+/*
+Keyword colors can be found at http://colours.neilorangepeel.com/
+*/
+
+/* border-box fix */
+/* html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+*/
+body,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+}
+
+/* SCREEN DIVISIONS */
+.theGrid {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    gap: 5vh;
+    background-color: rgb(179, 230, 230);
+}
+
+.topPart {
+    display: flex;
+    height: 20vh;
+    background-color: rgb(212, 25, 200);
+}
+
+.secretPart {
+    display: flex;
+    flex-direction: row;
+    height: 20vh;
+    background-color: rgb(255, 255, 105);
+    justify-content: center;
+}
+
+.bottomPart {
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+/* DIVISIONS OF BOTTOM PART */
+.inputPart {
+    background-color: rgb(179, 230, 230);
+    margin-left: 2vw;
+}
+
+.messagePart {
+    background-color: rgb(179, 230, 230);
+    margin-right: 2vw;
+}
+
+.inputPart,
+.messagePart {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.gameTitle {
+    margin-left: 2vw;
+}
+
+.gameDescription {
+    flex: 0 1 auto;
+    margin-left: auto;
+    vertical-align: middle;
+    margin-right: 2vw;
+}
+
+.gameDescription,
+.gameTitle {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.secretBox {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+    justify-content: center;
+    color: coral;
+    background-color: aquamarine;
+    font-size: 70px;
+    margin: 1.5vh 0 1.5vh 0;
+    min-width: 20vw;
+}
+
+.messageBox {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    font-size: 30px;
+    background-color: aquamarine;
+}
+
+/* .scoreBox {
+    background-color: aliceblue;
+}
+
+.highestScoreBox {
+    background-color: antiquewhite;
+} */
+
+.messageText,
+.score,
+.highestScore {
+    background-color: antiquewhite;
+}
+
+/* .scoreBox,
+.highestScoreBox {
+    grid-column: 3 / 7;
+    color: coral;
+    background-color: aquamarine;
+    font-size: 30px;
+    text-align: center;
+    outline-color: coral;
+    outline-width: 10px;
+} */
+
+.inputLabel,
+.label {
+    /* background-color: rgb(250, 215, 246); */
+    margin-left: 1vw;
+    margin-top: 1vh;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+
+    /* color: rgb(80, 255, 191); */
+}
+
+.messageBox {
+    height: 40%;
+    font-size: 1.5em;
+}
+
+.scoreBox,
+.highestScoreBox {
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 10%;
+}
+
+.messageBox,
+.scoreBox,
+.highestScoreBox {
+    display: flex;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 4%;
+    background-color: antiquewhite;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputNumber {
+    height: 30%;
+    font-size: 4rem;
+    text-align: center;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    background-color: antiquewhite;
+}
+
+button {
+    background-color: cornflowerblue;
+    /* min-width: 30vw; */
+    margin-left: 2vw;
+    margin-right: 2vw;
+    height: 30%;
+    font-size: 2rem;
+}
+
+button:hover {
+    background-color: aqua;
+}
