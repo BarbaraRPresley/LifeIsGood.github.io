@@ -13,26 +13,26 @@ Keyword colors can be found at http://colours.neilorangepeel.com/
 *:after {
     box-sizing: inherit;
 } */
-/*
-@media screen and (max-height: 480px) {
-    .messageText,
-.score,
-.highestScore {
-    background-color: antiquewhite;
-    /*font-size: 70%;*/
 
-/* font-size: 1rem;
+.messageBox {
+    height: 40%;
+    width: 80%;
+    font-size: min(5vh);
 }
 
-@media screen and (max-height: 480px) {
-    .messageText,
-.score,
-.highestScore {
-    background-color: antiquewhite;
-    /*font-size: 70%;*/
-/* 
-    font-size: 1rem;
-} */
+@media screen and (max-width: 600px) {
+    .messageBox {
+        height: 40%;
+        width: 100%;
+        font-size: min(3vw);
+    }
+}
+
+:root {
+    --fullFontSize: 5vh;
+    --phoneFontSize: 5vw;
+    --white: #ffffff;
+}
 
 body,
 p {
@@ -130,6 +130,8 @@ h2 {
     border-style: solid;
     border-color: coral;
     border-radius: 10vh;
+
+    /* margin: 1.5vh 0 1.5vh 0; */
     min-width: 20vw;
 }
 
@@ -148,10 +150,10 @@ h2 {
     color: rgb(0, 0, 0);
 }
 
-.messageBox {
+/* .messageBox {
     height: 40%;
-    font-size: min(5vh, 5vw);
-}
+    font-size: min(5vh, 3vw);
+} */
 
 .scoreBox,
 .highestScoreBox {
