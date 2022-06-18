@@ -152,13 +152,17 @@ h2 {
 
 .messageBox {
     height: 40%;
+    font-size: min(5vh, 10vw);
+}
+
+.scoreBox,
+.highestScoreBox {
     font-size: 5vh;
 }
 
 .messageBox,
 .scoreBox,
 .highestScoreBox {
-    font-size: 5vh;
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -189,9 +193,9 @@ h2 {
 button {
     background-color: cornflowerblue;
     /* min-width: 30vw; */
-    width: 60%;
+    width: 70%;
     height: 20%;
-    font-size: 5vh;
+    font-size: 4vh;
     border-radius: 5vh;
     margin: auto;
 }
