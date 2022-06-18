@@ -13,6 +13,9 @@
 */
 const maxSecretNumber = 20;
 const maxScore = 20;
+const scrollHeight = document.querySelector('.mainContainer').scrollHeight;
+const innerWindowHeight = window.innerHeight;
+const outerWindowHeight = window.outerHeight;
 let score,
     theMessage,
     highestScore = 0,
@@ -20,10 +23,21 @@ let score,
 
 console.log('the title: ' + document.title);
 
+// function alertHeight() {
+//     alert(document.getElementById('mainContainer').style.height);
+// }
+
 /// Anonomous Functions
 const createSecretNumber = function () {
     secretNumber = Math.trunc(Math.random() * maxSecretNumber + 1);
     document.querySelector('.secretText').textContent = '?';
+    // alert(
+    //     `Scroll Height: ${scrollHeight}\ninnerWindowHeight: ${innerWindowHeight}\nouterWindowHeight: ${outerWindowHeight}`
+    // );
+
+    // textContent =
+    //     `Inner height: ${window.innerHeight}\n` +
+    //     `Outer height: ${window.outerHeight}`;
 };
 const decrementScore = function () {
     score--;
@@ -59,6 +73,7 @@ const setInitializations = function () {
 /// INITIALIZATIONS
 setInitializations();
 console.log(`Secret Number: ${secretNumber}`);
+window.addEventListener('resize', resizeListener);
 
 /// EventListeners
 document.querySelector('.againBtn').addEventListener('click', function () {
@@ -97,3 +112,14 @@ document.querySelector('.checkBtn').addEventListener('click', function () {
     }
     console.log(`Secret Number: ${secretNumber} inputContent: ${inputNumber}`);
 });
+
+const heightOutput = document.querySelector('#height');
+const widthOutput = document.querySelector('#width');
+
+function resizeListener() {
+    heightOutput.textContent = window.innerHeight;
+    widthOutput.textContent = window.innerWidth;
+    alert(
+        `Scroll Height: ${scrollHeight}\ninnerWindowHeight: ${innerWindowHeight}\nouterWindowHeight: ${outerWindowHeight}`
+    );
+}
