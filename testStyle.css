@@ -30,7 +30,7 @@ Keyword colors can be found at http://colours.neilorangepeel.com/
 
 :root {
     --fullFontSize: 5vh;
-    --phoneFontSize: 5vw;
+    --phoneFontSize: 2vw;
     --white: #ffffff;
 }
 
