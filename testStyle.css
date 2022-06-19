@@ -14,25 +14,99 @@ Keyword colors can be found at http://colours.neilorangepeel.com/
     box-sizing: inherit;
 } */
 
-.messageBox {
+/* .messageBox {
     height: 40%;
     width: 80%;
     font-size: 5vh;
+} */
+
+:root {
+    --labelFontSize: 5vh;
+    --buttonFontSize: 5vh;
+    --buttonWidth: 70%;
+    --messageFontSize: min(5vh, 10vw);
+}
+
+.topPart {
+    display: flex;
+    flex-direction: row;
+}
+
+.topPart {
+    display: flex;
+    flex-direction: row;
+    height: 15vh;
+    width: 100%;
+    background-color: blueviolet;
+}
+
+/* topPart Contents */
+.gameTitle {
+    padding-left: 2%;
+    /* horizontal for row or vertical for column */
+    justify-content: left;
+    width: 58%;
+}
+
+.gameDescription {
+    padding-right: 2%;
+    /* horizontal for row or vertical for column */
+    justify-content: right;
+    width: 42%;
+}
+
+.gameDescription,
+.gameTitle {
+    display: flex;
+    flex-direction: row;
+
+    color: white;
+    font-size: 100%;
+    /* vertical for row or horizontal for column*/
+    align-items: center;
 }
 
 @media screen and (max-width: 600px) {
-    .messageBox {
+    /* .messageBox {
         height: 40%;
         width: 100%;
-        font-size: 2vw;
+        font-size: var(--theFontSize);
+    } */
+    .topPart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gameTitle,
+    .gameDescription {
+        padding-left: 5vh;
+        font-size: min(2.5vh, 4vw);
+        /* display: flex; */
+        /* flex-direction: column; */
+        width: 100%;
+        height: 30%;
+        /* horizontal for row or vertical for column */
+        justify-content: left;
+        align-items: center;
+        /* word-wrap: none; */
+    }
+
+    :root {
+        --labelFontSize: 3vh;
+        /* --messageFontSize: 2vw; */
+        --buttonFontSize: min(5vh, 10vw);
+        --buttonWidth: 90%;
     }
 }
 
-:root {
+/* :root {
     --fullFontSize: 5vh;
     --phoneFontSize: 2vw;
+    --testFontSize: 10vw;
     --white: #ffffff;
-}
+} */
 
 body,
 p {
@@ -56,13 +130,13 @@ h2 {
     overflow: hidden;
 }
 
-.topPart {
+/* .topPart {
     display: flex;
     flex-direction: row;
     height: 15vh;
     width: 100%;
     background-color: rgb(212, 25, 200);
-}
+} */
 
 .secretPart {
     /*Necessary to get the inner container (secretBox) to center vertically*/
@@ -93,39 +167,45 @@ h2 {
 
 /* CONTENTS */
 /* topPart Contents */
-.gameTitle {
-    padding-left: 2%;
-    /* horizontal for row or vertical for column */
-    justify-content: left;
-}
+/* .gameTitle {
+    padding-left: 2%; */
+/* horizontal for row or vertical for column */
+/* justify-content: left;
+} */
 
-.gameDescription {
-    padding-right: 2%;
-    /* horizontal for row or vertical for column */
-    justify-content: right;
-}
+/* .gameDescription {
+    padding-right: 2%;  */
+/* horizontal for row or vertical for column */
+/* justify-content: right;
+} */
 
-.gameDescription,
+/* .gameDescription,
 .gameTitle {
     display: flex;
     flex-direction: row;
     width: 50%;
     color: white;
-    font-size: 100%;
-    /* vertical for row or horizontal for column*/
-    align-items: center;
-}
+    font-size: 100%; */
+/* vertical for row or horizontal for column*/
+/* align-items: center;
+} */
 
 /* secretPart Contents Notice this is not flex */
 .secretBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     height: 80%;
-    width: max(20%, fit-content);
+    padding-left: 1vh;
+    padding-right: 1vh;
+    width: fit-content;
     margin-top: 0;
     margin: auto;
     text-align: center;
     color: coral;
     background-color: cornflowerblue;
-    font-size: 10vh;
+    font-size: min(10vh, 40vw);
     border-width: 1%;
     border-style: solid;
     border-color: coral;
@@ -146,7 +226,7 @@ h2 {
     width: 50vw;
     /* margin-left: 1vw;
     margin-top: 1vh; */
-    font-size: 5vh;
+    font-size: var(--labelFontSize);
     color: rgb(0, 0, 0);
 }
 
@@ -154,6 +234,17 @@ h2 {
     height: 40%;
     font-size: min(5vh, 3vw);
 } */
+
+.messageBox {
+    height: 40%;
+    width: 80%;
+    font-size: 100px;
+    /* font-size: var(--messageFontSize); */
+    word-break: normal;
+    word-wrap: normal;
+    /* word-break: break-all;
+    word-wrap: break-word; */
+}
 
 .scoreBox,
 .highestScoreBox {
@@ -185,7 +276,7 @@ h2 {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 10vh;
+    font-size: min(10vh, 20vw);
     text-align: center;
     background-color: antiquewhite;
 }
@@ -193,9 +284,11 @@ h2 {
 button {
     background-color: cornflowerblue;
     /* min-width: 30vw; */
-    width: 70%;
+    /* width: 70%; */
+    width: var(--buttonWidth);
     height: 20%;
-    font-size: 4vh;
+    font-size: var(--buttonFontSize);
+    /* font-size: 4vh; */
     border-radius: 5vh;
     margin: auto;
 }

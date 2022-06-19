@@ -11,6 +11,40 @@
 .checkBtn {
 .againBtn {
 */
+// const input = document.querySelector('.theMessage');
+const output = document.querySelector('.theMessage');
+const outputContainer = document.querySelector('.messageBox');
+const scoreDiv = document.querySelector('.score');
+
+const resizeToFit = () => {
+    let fontSize = window.getComputedStyle(output).fontSize;
+    let scoreSize = window.getComputedStyle(scoreDiv).fontSize;
+    // console.log(`Font size of score: ${scoreSize}`);
+    console.log(
+        `Font sizes before - message: ${fontSize}, score: ${scoreSize}`
+    );
+    // if (fontSize < scoreSize) {
+    //     // output.style.fontSize = parseFloat(scoreSize) + 'px';
+    output.style.fontSize = scoreSize;
+    // }
+
+    reduceSizeToFit();
+    console.log(`Font sizes after - message: ${fontSize}, score: ${scoreSize}`);
+};
+
+const reduceSizeToFit = (theOutput, theOutputContainer) => {
+    let fontSize = window.getComputedStyle(output).fontSize;
+    if (output.clientHeight >= outputContainer.clientHeight) {
+        output.style.fontSize = parseFloat(fontSize) - 1 + 'px';
+        reduceSizeToFit();
+    }
+};
+
+// window.onresize = resizeToFit(
+//     document.querySelector('.theMessage'),
+//     document.querySelector('.messageBox')
+// );
+
 const maxSecretNumber = 20;
 const maxScore = 20;
 const scrollHeight = document.querySelector('.mainContainer').scrollHeight;
@@ -44,7 +78,15 @@ const decrementScore = function () {
     document.querySelector('.score').textContent = score;
 };
 const displayMessage = function (message) {
-    document.querySelector('.theMessage').textContent = message;
+    // if innerWindowHeight() < 600px {
+    //     document.querySelector('.theMessage').style.fontSize="10%";
+    // }
+    console.log(`Message font size: ${output.style.fontSize}`);
+    console.log(`Client height: ${output.clientHeight}`);
+    output.textContent = message;
+    // reduceSizeToFit();
+    resizeToFit();
+    console.log(`Client height after change: ${output.clientHeight}`);
 };
 const displaySecretNumber = function (theNumber) {
     document.querySelector('.secretText').textContent = theNumber;
@@ -73,7 +115,7 @@ const setInitializations = function () {
 /// INITIALIZATIONS
 setInitializations();
 console.log(`Secret Number: ${secretNumber}`);
-window.addEventListener('resize', resizeListener);
+// window.addEventListener('resize', resizeListener);
 
 /// EventListeners
 document.querySelector('.againBtn').addEventListener('click', function () {
@@ -81,7 +123,7 @@ document.querySelector('.againBtn').addEventListener('click', function () {
 });
 
 document.querySelector('.checkBtn').addEventListener('click', function () {
-    console.log('eventlistener works');
+    console.log('Check button eventlistener works');
     const inputNumber = Number(document.querySelector('.inputNumber').value);
 
     console.log(inputNumber);
@@ -91,17 +133,17 @@ document.querySelector('.checkBtn').addEventListener('click', function () {
         if (!inputNumber || inputNumber < 1 || inputNumber > 20) {
             console.log('Bad Number');
             displayMessage(
-                'Invalid number.  Please enter a number between 1 and 20'
+                'Invalid number.  Please enter a number between 1 and 20.'
             );
         } else if (inputNumber == secretNumber) {
             displayMessage('You got it!');
             displaySecretNumber(secretNumber);
             setHighestScore(score);
         } else if (inputNumber < secretNumber) {
-            displayMessage('Too low.');
+            displayMessage('Too low');
             decrementScore();
         } else if (inputNumber > secretNumber) {
-            displayMessage('Too high.');
+            displayMessage('Too high');
             decrementScore();
         }
 
@@ -113,13 +155,13 @@ document.querySelector('.checkBtn').addEventListener('click', function () {
     console.log(`Secret Number: ${secretNumber} inputContent: ${inputNumber}`);
 });
 
-const heightOutput = document.querySelector('#height');
-const widthOutput = document.querySelector('#width');
+// const heightOutput = document.querySelector('#height');
+// const widthOutput = document.querySelector('#width');
 
-function resizeListener() {
-    heightOutput.textContent = window.innerHeight;
-    widthOutput.textContent = window.innerWidth;
-    alert(
-        `Scroll Height: ${scrollHeight}\ninnerWindowHeight: ${innerWindowHeight}\nouterWindowHeight: ${outerWindowHeight}`
-    );
-}
+// function resizeListener() {
+//     heightOutput.textContent = window.innerHeight;
+//     widthOutput.textContent = window.innerWidth;
+//     alert(
+//         `Scroll Height: ${scrollHeight}\ninnerWindowHeight: ${innerWindowHeight}\nouterWindowHeight: ${outerWindowHeight}`
+//     );
+// }
