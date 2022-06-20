@@ -24,7 +24,7 @@ Keyword colors can be found at http://colours.neilorangepeel.com/
     --labelFontSize: 5vh;
     --buttonFontSize: 5vh;
     --buttonWidth: 70%;
-    --messageFontSize: min(5vh, 10vw);
+    /* --messageFontSize: min(5vh, 10vw);*/
 }
 
 .topPart {
@@ -238,7 +238,7 @@ h2 {
 .messageBox {
     height: 40%;
     width: 80%;
-    font-size: 100px;
+    font-size: 10px;
     /* font-size: var(--messageFontSize); */
     word-break: normal;
     word-wrap: normal;
