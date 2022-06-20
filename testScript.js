@@ -28,7 +28,7 @@ const resizeToFit = () => {
     output.style.fontSize = scoreSize;
     // }
 
-    reduceSizeToFit();
+    //reduceSizeToFit();
     console.log(`Font sizes after - message: ${fontSize}, score: ${scoreSize}`);
 };
 
@@ -85,7 +85,7 @@ const displayMessage = function (message) {
     console.log(`Client height: ${output.clientHeight}`);
     output.textContent = message;
     // reduceSizeToFit();
-    //resizeToFit();
+    resizeToFit();
     console.log(`Client height after change: ${output.clientHeight}`);
 };
 const displaySecretNumber = function (theNumber) {
