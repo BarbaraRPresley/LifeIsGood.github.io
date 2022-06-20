@@ -82,7 +82,7 @@ Keyword colors can be found at http://colours.neilorangepeel.com/
     .gameTitle,
     .gameDescription {
         padding-left: 5vh;
-        font-size: min(2.5vh, 4vw);
+        font-size: min(2.5vh, 2vw);
         /* display: flex; */
         /* flex-direction: column; */
         width: 100%;
@@ -96,7 +96,7 @@ Keyword colors can be found at http://colours.neilorangepeel.com/
     :root {
         --labelFontSize: 3vh;
         /* --messageFontSize: 2vw; */
-        --buttonFontSize: min(5vh, 10vw);
+        --buttonFontSize: min(5vh, 5vw);
         --buttonWidth: 90%;
     }
 }
@@ -232,7 +232,7 @@ h2 {
 
 /* .messageBox {
     height: 40%;
-    font-size: min(5vh, 3vw);
+    font-size: min(5vh, 0.5vw);
 } */
 
 .messageBox {
