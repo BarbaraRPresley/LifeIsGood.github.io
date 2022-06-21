@@ -28,7 +28,7 @@ const resizeToFit = () => {
     output.style.fontSize = scoreSize;
     // }
 
-    //reduceSizeToFit();
+    reduceSizeToFit();
     console.log(`Font sizes after - message: ${fontSize}, score: ${scoreSize}`);
 };
 
