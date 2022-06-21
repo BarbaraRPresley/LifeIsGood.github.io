@@ -259,9 +259,9 @@ h2 {
     margin: auto;
     margin-top: 0;
     width: 80%;
-    /* border-style: solid; */
-    /* border-radius: 3vh; */
-    /* border-color: deepskyblue; */
+    border-style: solid; 
+    border-radius: 3vh; 
+    border-color: deepskyblue; 
     background-color: antiquewhite;
 
     /* horizontal for row or vertical for column */
